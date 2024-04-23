@@ -19,6 +19,8 @@ wrapper.addEventListener("mousemove", (e) => {
 
     onZoomXCoord = e.pageX;
     onZoomYCoord = e.pageY;
+    //console.log(onZoomXCoord, onZoomYCoord);
+    console.log(e.clientX, e.clientY);
 
     if (e.ctrlKey) {
         wrapper.style.cursor = 'none';
@@ -27,6 +29,7 @@ wrapper.addEventListener("mousemove", (e) => {
         }
         let xDiff = e.clientX - oldXMousePos;
         let yDiff = e.clientY - oldYMousePos;
+        
         window.scrollBy(xDiff, yDiff);
         oldXMousePos = e.clientX;
         oldYMousePos = e.clientY;
@@ -35,7 +38,7 @@ wrapper.addEventListener("mousemove", (e) => {
         for(let i = 1; i < wrapper.childNodes.length; i++){
             wrapper.childNodes[i].classList.add("cellBlock");
         }
-        wrapper.style.cursor = 'auto';
+        wrapper.style.cursor = 'crosshair';
         xDiff = undefined;
         yDiff = undefined;
         oldXMousePos = undefined;
@@ -47,7 +50,9 @@ wrapper.addEventListener("mousemove", (e) => {
 wrapper.addEventListener("wheel", (e) => {
     e.preventDefault();
 
+    
     wrapper.style.transformOrigin = onZoomXCoord + "px " + onZoomYCoord + "px";
+    
     
     if(e.deltaY > 0){
         zoom = zoom > 1 ? zoom -= zoomDiff : 1;

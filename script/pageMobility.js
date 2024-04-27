@@ -7,9 +7,17 @@ let oldXMousePos;
 let oldYMousePos;
 
 let zoom = 1;
-let zoomDiff = 0.3;
+const zoomDiff = 0.2;
 let onZoomXCoord;
 let onZoomYCoord;
+
+
+const zoomer = {
+    scaleAmount: 1,
+    zoomIn(mouseX, mouseY) {
+                
+    }
+};
 
 addEventListener("load", (event) => {
     window.scrollBy(moveByRight, moveByBottom);
@@ -19,9 +27,8 @@ wrapper.addEventListener("mousemove", (e) => {
 
     onZoomXCoord = e.pageX;
     onZoomYCoord = e.pageY;
-    //console.log(onZoomXCoord, onZoomYCoord);
-    console.log(e.clientX, e.clientY);
 
+    //Panning
     if (e.ctrlKey) {
         wrapper.style.cursor = 'none';
         while(document.querySelectorAll(".cellBlock").length){
@@ -49,18 +56,18 @@ wrapper.addEventListener("mousemove", (e) => {
 
 wrapper.addEventListener("wheel", (e) => {
     e.preventDefault();
+    console.log(e.deltaY);
+    console.log(e.pageX, e.pageY);
+    let mouseXMultiplied = e.pageX * 1.2;
+    let mouseYMultiplied = e.pageY * 1.2;
+    let xDifferencePos = e.pageX - mouseXMultiplied;
+    let yDifferencePos = e.pageY - mouseYMultiplied;
 
-    
-    wrapper.style.transformOrigin = onZoomXCoord + "px " + onZoomYCoord + "px";
-    
-    
-    if(e.deltaY > 0){
-        zoom = zoom > 1 ? zoom -= zoomDiff : 1;
-        wrapper.style.transform = `scale(${zoom = zoom < 1 ? 1 : zoom})`;
-    }
-    else if(e.deltaY < 0){
-        zoom = zoom < 3 ? zoom += zoomDiff : 3;
-        wrapper.style.transform = `scale(${zoom = zoom > 3 ? 3 : zoom})`;
+    //Scroll Up
+    if(e.deltaY < 0){
+        wrapper.style.width = `${wrapper.clientWidth * 1.2}px`;
+        wrapper.style.top = `${yDifferencePos}px`;
+        wrapper.style.left = `${xDifferencePos}px`;
     }
 
 });

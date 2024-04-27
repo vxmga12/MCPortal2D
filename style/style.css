@@ -3,9 +3,11 @@
 body {
     margin: 0;
     overflow: hidden;
+    width: 2576px;
 }
 
 #wrapper {
+    position: fixed;
     display: grid;
     grid-template-columns: repeat(64, 1fr);
     width: 2576px;

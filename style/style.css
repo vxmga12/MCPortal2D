@@ -7,7 +7,7 @@ body {
 }
 
 #wrapper {
-    position: fixed;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(64, 1fr);
     width: 2576px;

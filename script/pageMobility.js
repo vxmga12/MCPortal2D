@@ -24,6 +24,7 @@ addEventListener("load", (event) => {
 });
 
 wrapper.addEventListener("mousemove", (e) => {
+    //console.log(e.pageX, e.pageY);
 
     onZoomXCoord = e.pageX;
     onZoomYCoord = e.pageY;
@@ -55,19 +56,17 @@ wrapper.addEventListener("mousemove", (e) => {
 });
 
 wrapper.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    console.log(e.deltaY);
-    console.log(e.pageX, e.pageY);
-    let mouseXMultiplied = e.pageX * 1.2;
-    let mouseYMultiplied = e.pageY * 1.2;
-    let xDifferencePos = e.pageX - mouseXMultiplied;
-    let yDifferencePos = e.pageY - mouseYMultiplied;
+    
 
     //Scroll Up
     if(e.deltaY < 0){
+        let xDifferencePos = (e.pageX * 1.2) - e.pageX;//-24
+        let yDifferencePos = (e.pageY * 1.2) - e.pageY;//-24
         wrapper.style.width = `${wrapper.clientWidth * 1.2}px`;
-        wrapper.style.top = `${yDifferencePos}px`;
-        wrapper.style.left = `${xDifferencePos}px`;
+        scrollBy(xDifferencePos, yDifferencePos);
+    }
+    else if(e.deltaY > 0){
+        wrapper.style.width = `${wrapper.clientWidth / 1.2}px`;
     }
 
 });

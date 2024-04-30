@@ -6,18 +6,10 @@ const moveByBottom = bottomSide / 2;
 let oldXMousePos;
 let oldYMousePos;
 
-let zoom = 1;
-const zoomDiff = 0.2;
 let onZoomXCoord;
 let onZoomYCoord;
 
-
-const zoomer = {
-    scaleAmount: 1,
-    zoomIn(mouseX, mouseY) {
-                
-    }
-};
+let scrolled = 0;
 
 addEventListener("load", (event) => {
     window.scrollBy(moveByRight, moveByBottom);
@@ -55,18 +47,22 @@ wrapper.addEventListener("mousemove", (e) => {
 
 });
 
+//Scrolling feature
 wrapper.addEventListener("wheel", (e) => {
-    
-
     //Scroll Up
-    if(e.deltaY < 0){
-        let xDifferencePos = (e.pageX * 1.2) - e.pageX;//-24
-        let yDifferencePos = (e.pageY * 1.2) - e.pageY;//-24
+    if(e.deltaY < 0 && scrolled < 5){
+        scrolled++;
+        console.log(scrolled);
+        let xDifferencePos = (e.pageX * 1.2) - e.pageX;
+        let yDifferencePos = (e.pageY * 1.2) - e.pageY;
         wrapper.style.width = `${wrapper.clientWidth * 1.2}px`;
         scrollBy(xDifferencePos, yDifferencePos);
-    }
-    else if(e.deltaY > 0){
+    } //Scroll down
+    else if(e.deltaY > 0 && scrolled > 0){
+        scrolled--;
+        let xDifferencePos = (e.pageX / 1.2) - e.pageX;
+        let yDifferencePos = (e.pageY / 1.2) - e.pageY;
         wrapper.style.width = `${wrapper.clientWidth / 1.2}px`;
+        scrollBy(xDifferencePos, yDifferencePos);
     }
-
 });

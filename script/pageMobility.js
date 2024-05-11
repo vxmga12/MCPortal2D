@@ -12,7 +12,7 @@ let onZoomYCoord;
 let scrolled = 0;
 
 addEventListener("load", (event) => {
-    window.scrollBy(moveByRight, moveByBottom);
+    window.scrollBy(moveByRight, moveByBottom);    
 });
 
 wrapper.addEventListener("mousemove", (e) => {
@@ -52,7 +52,6 @@ wrapper.addEventListener("wheel", (e) => {
     //Scroll Up
     if(e.deltaY < 0 && scrolled < 5){
         scrolled++;
-        console.log(scrolled);
         let xDifferencePos = (e.pageX * 1.2) - e.pageX;
         let yDifferencePos = (e.pageY * 1.2) - e.pageY;
         wrapper.style.width = `${wrapper.clientWidth * 1.2}px`;

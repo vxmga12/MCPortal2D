@@ -80,6 +80,7 @@ body {
     /*grid-auto-rows: minmax(100px, auto);*/
     align-items: center;
     justify-items: center;
+    background: linear-gradient(180deg, rgba(117, 180, 255, 1) 0%, rgba(213, 248, 255, 1) 60%);
 }
 
 #wrapper div {
@@ -96,8 +97,8 @@ body {
 
 /* Background css */
 
-.skyBlock {
-    background: #75b4ff;
+.skyBlock:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .grassBlock {

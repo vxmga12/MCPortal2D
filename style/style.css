@@ -110,3 +110,160 @@ body {
     background: url(https://www.filterforge.com/filters/11635-v2.jpg);
     background-size: contain;
 }
+
+/* Toolbar UI */
+
+#toolbar {
+    display: flex;
+    position: fixed;
+    height: 66px;
+    width: 546px;
+    bottom: 25px;
+    background: #ffffff4f;
+    left: calc((100% - 546px) / 2);
+}
+
+#item1, #item9 {
+    width: 11.538461538461538461538461538462%;
+    height: 100%;
+}
+
+#item1 {
+    background: url(../img/toolbar/item1.png);
+    background-size: cover;
+}
+
+#item9 {
+    background: url(../img/toolbar/item9.png);
+    background-size: cover;
+}
+
+#item2, #item3, #item4, #item5, #item6, #item7, #item8 {
+    width: 10.989010989010989010989010989011%;
+    height: 100%;
+    background: url(../img/toolbar/itemMiddle.png);
+    background-size: cover;
+} 
+
+#item1 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: -5px;
+    z-index: 2;
+}
+
+#item2 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 57px;
+    z-index: 2;
+}
+
+#item3 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 117px;
+    z-index: 2;
+}
+
+#item4 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 177px;
+    z-index: 2;
+}
+
+#item5 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 237px;
+    z-index: 2;
+}
+
+#item6 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 297px;
+    z-index: 2;
+}
+
+#item7 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 357px;
+    z-index: 2;
+}
+
+#item8 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 417px;
+    z-index: 2;
+}
+
+#item9 .itemSelected {
+    height: 72px;
+    position: absolute;
+    width: 72px;
+    background: url(../img/toolbar/bigSelector.png);
+    background-size: cover;
+    top: -3px;
+    left: 477px;
+    z-index: 2;
+}
+
+#item1 img {
+    z-index: 4;
+    position: relative;
+    width: 40px;
+    top: 14px;
+    left: 12px;
+}
+
+#item2 img {
+    z-index: 4;
+    position: relative;
+    width: 40px;
+    top: 14px;
+    left: 10px;
+}
+
+#item3 img {
+    z-index: 4;
+    position: relative;
+    width: 40px;
+    top: 14px;
+    left: 10px;
+}

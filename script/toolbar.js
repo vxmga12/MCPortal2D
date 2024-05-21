@@ -1,11 +1,18 @@
 let press = false;
 let previousActiveItem = 1;
+const MCtoolbar = {lastKeyPressed: '1'};
+
 
 const itemSelection = document.createElement("div");
 itemSelection.setAttribute("class", "itemSelected");
 
 document.addEventListener("keydown", (e) => {
+    if(e.key == 'Control'){
+        return;
+    }
     if(!press){
+        MCtoolbar.lastKeyPressed = e.key;
+        console.log(MCtoolbar);
         press = true;
         if(e.key != previousActiveItem){
             document.querySelectorAll("#item" + previousActiveItem +" .itemSelected")[0].remove(); // removes the big selected image

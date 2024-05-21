@@ -12,6 +12,8 @@ for (let i = 1; i <= 2048; i++) {
     else if ( i > 1088 && i <= 2048){
         div.classList.add("dirtBlock");
     }
+    div.blockID = i;
+    div.blockType = 'notObsidian';
     //div.innerHTML = i;
 
     wrapper.appendChild(div);

@@ -111,6 +111,13 @@ body {
     background-size: contain;
 }
 
+/* obsidian item placement css */
+
+.obsidian {
+    background: url(../img/blockTextures/obsidian.png) !important;
+    background-size: contain !important;
+}
+
 /* Toolbar UI */
 
 #toolbar {

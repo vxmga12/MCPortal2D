@@ -118,6 +118,22 @@ body {
     background-size: contain !important;
 }
 
+/* portal block placement */
+
+.portalBlock {
+    background: url(https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Nether_Portal_%28texture%29_JE2-a1.gif/revision/latest?cb=20200511210852);
+    background-size: contain;
+}
+
+.skyBlock.portalBlock:hover{
+    background: url(https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Nether_Portal_%28texture%29_JE2-a1.gif/revision/latest?cb=20200511210852);;
+    background-size: contain;
+}
+
+.portalBlock:hover {
+    filter: brightness(0.5);
+}
+
 /* Toolbar UI */
 
 #toolbar {

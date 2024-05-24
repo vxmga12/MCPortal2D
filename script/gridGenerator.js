@@ -13,6 +13,7 @@ for (let i = 1; i <= 2048; i++) {
         div.classList.add("dirtBlock");
     }
     div.blockID = i;
+    div.index = i - 1; 
     div.blockType = 'notObsidian';
     //div.innerHTML = i;
 

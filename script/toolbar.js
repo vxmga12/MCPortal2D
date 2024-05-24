@@ -7,12 +7,11 @@ const itemSelection = document.createElement("div");
 itemSelection.setAttribute("class", "itemSelected");
 
 document.addEventListener("keydown", (e) => {
-    if(e.key == 'Control'){
-        return;
-    }
+    if(e.key == '1' || e.key == '2' || e.key == '3' || e.key == '4' || e.key == '5' || e.key == '6' || e.key == '7' || e.key == '8' || e.key == '9'){
+        //verifies if its a valid key    
+    }else{ return; }
     if(!press){
         MCtoolbar.lastKeyPressed = e.key;
-        console.log(MCtoolbar);
         press = true;
         if(e.key != previousActiveItem){
             document.querySelectorAll("#item" + previousActiveItem +" .itemSelected")[0].remove(); // removes the big selected image

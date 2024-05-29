@@ -15,7 +15,7 @@ for (let i = 1; i <= 2048; i++) {
     div.blockID = i;
     div.index = i - 1; 
     div.blockType = 'notObsidian';
-    //div.innerHTML = i;
+    div.innerHTML = i;
 
     wrapper.appendChild(div);
 }
